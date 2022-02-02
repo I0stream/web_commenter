@@ -1,10 +1,14 @@
 import React from 'react'
 
-const MessageField = () => {
+const MessageField = (props) => {
 
 	return (
 		<div className='MessageField'>
-			this is where you write messages
+			<input 
+				type="text"
+				value="Write a comment"
+				onChange={this.props.addCommentsProps("")}
+			/>
 		</div>
 	)
 }
