@@ -7,7 +7,7 @@ const MessageField = (props) => {
 			<input 
 				type="text"
 				value="Write a comment"
-				onChange={this.props.addCommentsProps("")}
+				onChange={() => this.props.addCommentsProps("")}
 			/>
 		</div>
 	)
