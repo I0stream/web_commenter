@@ -27,10 +27,18 @@ background: hotpink;
 }
 
 /* main container */
-
 .MainTopicView {
 background: mediumpurple;
 }
+.head{
+  display: flex;
+  background: yellow;
+  justify-content: space-between;
+}
+.current-topic {}
+.user-settings {}
+.topic-description{}
+
 
 .Topic-bar{
   background: deeppink;
@@ -42,4 +50,5 @@ background: mediumpurple;
 
 .MessageField{
   background: rebeccapurple;
+  display: flex;
 }

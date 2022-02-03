@@ -8,8 +8,11 @@ const MainTopicView = (props) => {
 
 	return (
 		<div className='MainTopicView'>
-			<div className='current-topic'> {myTopic.topicName} <div>User/settings</div></div>
-			<div>{myTopic.description}</div>
+			<div className='head'>
+				<div className='current-topic'> {myTopic.topicName}</div>
+				<div className='user-settings'>User/settings</div>
+			</div>
+			<div className='topic-description'>{myTopic.description}</div>
 			<Comment userComment={Comments} />
 			<MessageField addCommentProps={props.addCommentProps}/>
 		</div>

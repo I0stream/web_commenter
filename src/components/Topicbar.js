@@ -10,7 +10,7 @@ const Topicbar = (props) => {
 			<input 
 				type="text"
 				value="Search"
-				onChange={() => this.props.propsSearchKeyword()}
+				onChange={e => this.props.propsSearchKeyword(e.target.value)}
 			/>
 			<button>New Topic +</button>
 			<ul><li>{topicTitle}</li></ul>
