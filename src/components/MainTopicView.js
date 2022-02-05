@@ -14,9 +14,10 @@ const MainTopicView = (props) => {
 			</div>
 			<div className='topic-description'>{myTopic.description}</div>
 			<ul>
-			{myComments.map(myComments => (
+			{myComments.map(comment => (
 	      		<Comment 
-	      			userComment={myComments} 
+	      			key={comment.uuid}
+	      			userComment={comment} 
 	      		/>
 	    		))}
 			</ul>

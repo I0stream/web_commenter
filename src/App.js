@@ -44,6 +44,7 @@ function App() {
         reported: [],
     
     }]
+    
     const user = {
         userUUID: "",
         username: "fred",
@@ -78,7 +79,7 @@ function App() {
             <Topicbar testTopicName={myTopic.topicName} websiteName={currentWebsite} propsSearchKeyword={searchKeyword}/>
             <Navbar />
         </div>
-        <MainTopicView posterTopic={myTopic} userComments={comments[0]} addCommentProps={addComment}/>
+        <MainTopicView posterTopic={myTopic} userComments={testcomments} addCommentProps={addComment}/>
     </div>
   );
 }

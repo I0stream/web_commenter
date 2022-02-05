@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Comment = () => {
+const Comment = (props) => {
+
+	const { uuid, commentText, commentPoster, repliedTo, reported } = props.comment
+
+
 	return (
-		<div className='Comment'>a comment</div>)
+		<div className='Comment'>{commentText}</div>)
 }
 
 export default Comment
