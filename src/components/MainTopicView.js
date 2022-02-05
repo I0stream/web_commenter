@@ -4,16 +4,22 @@ import MessageField from './MessageField'
 
 const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
-	const Comments = props.userComments
+	const myComments = props.userComments
 
 	return (
 		<div className='MainTopicView'>
 			<div className='head'>
-				<div className='current-topic'> {myTopic.topicName}</div>
+				<h3 className='current-topic'> {myTopic.topicName}</h3>
 				<div className='user-settings'>User/settings</div>
 			</div>
 			<div className='topic-description'>{myTopic.description}</div>
-			<Comment userComment={Comments} />
+			<ul>
+			{myComments.map(myComments => (
+	      		<Comment 
+	      			userComment={myComments} 
+	      		/>
+	    		))}
+			</ul>
 			<MessageField addCommentProps={props.addCommentProps}/>
 		</div>
 	)

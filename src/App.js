@@ -36,8 +36,14 @@ function App() {
         repliedTo: "",
         reported: [],
     
+    },{
+        uuid: "122129838884721478",
+        commentText: "blah blah",
+        commentPoster: "giga chad",
+        repliedTo: "",
+        reported: [],
+    
     }]
-
     const user = {
         userUUID: "",
         username: "fred",

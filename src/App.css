@@ -29,6 +29,8 @@ background: hotpink;
 /* main container */
 .MainTopicView {
 background: mediumpurple;
+display: flex;
+flex-direction: column;
 }
 .head{
   display: flex;
@@ -37,7 +39,9 @@ background: mediumpurple;
 }
 .current-topic {}
 .user-settings {}
-.topic-description{}
+.topic-description{
+  text-indent: 50px;
+}
 
 
 .Topic-bar{
@@ -50,5 +54,8 @@ background: mediumpurple;
 
 .MessageField{
   background: rebeccapurple;
-  display: flex;
+
+}
+input{
+  width: 100%;
 }
