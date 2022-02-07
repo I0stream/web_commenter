@@ -8,7 +8,29 @@ import { v4 as uuidv4 } from "uuid";
 
 
 function App() {
-    const [comments, setComments] = useState(getInitialComments())
+    const [comments, setComments] = useState(
+    [{
+        uuid: 1,
+        commentText: "blah blah blah blah blah blah blah blah blah blah ",
+        commentPoster: "giga chad",
+        repliedTo: "",
+        reported: [],
+
+    },{
+        uuid: 2,
+        commentText: "commentText",
+        commentPoster: "giga wojak",
+        repliedTo: "",
+        reported: []
+    },{
+        uuid: 3,
+        commentText: "friends",
+        commentPoster: "apu",
+        repliedTo: "",
+        reported: []
+    }]
+        )
+    
 
     //get current website here and load topics and comments then populate
     const currentWebsite = window.location.host
@@ -61,7 +83,11 @@ function App() {
   return (
     <div className="App">
         <div className="TopicAndNavBar">
-            <Topicbar testTopicName={myTopic.topicName} websiteName={currentWebsite} propsSearchKeyword={searchKeyword}/>
+            <Topicbar 
+                testTopicName={myTopic.topicName}
+                websiteName={currentWebsite} 
+                propsSearchKeyword={searchKeyword}
+            />
             <Navbar />
         </div>
         <MainTopicView 

@@ -2,21 +2,12 @@ import React from 'react'
 
 const Comment = (props) => {
 
-	const { uuid, commentText, commentPoster, repliedTo, reported } = props.comment
-
-
-
-	if (repliedTo === ""){
-		console.log("do nothing")
-	} else {
-		console.log("sub to a comment")
-	}
-
+	const { key, text, commentPoster, repliedTo, reported } = props.userComment
 
 	return (
 		<div className='Comment'>
-
-		<p>{commentText}</p>
+		<p>{console.log(props.userComment)}</p>
+		<p>{text}</p>
 		<h4>{commentPoster}</h4>
 
 		</div>

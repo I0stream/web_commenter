@@ -13,8 +13,11 @@ const MessageField = (props) => {
 			[e.target.name]: e.target.value,
 		})
 	}
-	const handleSubmit = e => {
-		e.preventDefault()
+
+	//() should be e
+	const handleSubmit = () => {
+		console.log("submit")
+		/*e.preventDefault()
 		//trim removes whitespace 
 		if (inputText.title.trim()){
 			props.addCommentProps(inputText.title)
@@ -23,11 +26,11 @@ const MessageField = (props) => {
 			})
 		} else {
 			alert("Please write item")
-		}
+		}*/
 	}
 
 	return (
-				<form onSubmit={this.handleSubmit} className='MessageField'>
+				<form onSubmit={handleSubmit} className='MessageField'>
 			<input 
 				className="mF"
 				type="text"
