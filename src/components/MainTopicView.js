@@ -4,7 +4,7 @@ import MessageField from './MessageField'
 
 const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
-	const myComments = props.userComments
+
 
 	return (
 		<div className='MainTopicView'>
@@ -14,7 +14,7 @@ const MainTopicView = (props) => {
 			</div>
 			<div className='topic-description'>{myTopic.description}</div>
 			<ul>
-			{myComments.map(comment => (
+			{props.userComments.map(comment => (
 	      		<Comment 
 	      			key={comment.uuid}
 	      			userComment={comment} 

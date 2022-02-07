@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 
 import Navbar from './pages/navbar'
 import MainTopicView from './components/MainTopicView'
@@ -29,36 +29,15 @@ function App() {
 
     }    
 
-    const testcomments = [{
-        uuid: "122139838884721478",
-        commentText: "blah blah",
-        commentPoster: "giga chad",
-        repliedTo: "",
-        reported: [],
-    
-    },{
-        uuid: "122129838884721478",
-        commentText: "blah blah",
-        commentPoster: "giga chad",
-        repliedTo: "",
-        reported: [],
-    
-    }]
-    
+
     const user = {
         userUUID: "",
         username: "fred",
         commentids: []
-    }
+    } 
 
-    function getInitialComments() {
-        // getting stored items
-        const temp = localStorage.getItem("comments")
-        const savedComments = JSON.parse(temp)
-        return savedComments || []
-    }
 
-    const addComment = (commentText) => {
+    const addComment = commentText => {
         const newComment = {
             uuid: uuidv4,
         commentText: commentText,
@@ -68,9 +47,15 @@ function App() {
         }
         setComments([...comments, newComment])
     }
-
     const searchKeyword = (keyword) => {
         console.log("searched")
+    }
+
+        function getInitialComments() {
+        // getting stored items
+        const temp = localStorage.getItem("comments")
+        const savedComments = JSON.parse(temp)
+        return savedComments || []
     }
 
   return (
@@ -79,7 +64,11 @@ function App() {
             <Topicbar testTopicName={myTopic.topicName} websiteName={currentWebsite} propsSearchKeyword={searchKeyword}/>
             <Navbar />
         </div>
-        <MainTopicView posterTopic={myTopic} userComments={testcomments} addCommentProps={addComment}/>
+        <MainTopicView 
+            posterTopic={myTopic} 
+            userComments={comments} 
+            addCommentProps={addComment}
+        />
     </div>
   );
 }
