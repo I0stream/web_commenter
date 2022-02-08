@@ -2,14 +2,13 @@ import React from 'react'
 
 const Comment = (props) => {
 
-	const { key, text, commentPoster, repliedTo, reported } = props.userComment
+	const { commentText, commentPoster, repliedTo, timePosted } = props.userComment
 
 	return (
 		<div className='Comment'>
-		<p>{console.log(props.userComment)}</p>
-		<p>{text}</p>
 		<h4>{commentPoster}</h4>
-
+		<p>{commentText}</p>
+		<p>{timePosted}</p>
 		</div>
 
 

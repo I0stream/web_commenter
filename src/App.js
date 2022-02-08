@@ -13,6 +13,7 @@ function App() {
         uuid: 1,
         commentText: "blah blah blah blah blah blah blah blah blah blah ",
         commentPoster: "giga chad",
+        timeposted: Date(),
         repliedTo: "",
         reported: [],
 
@@ -20,12 +21,14 @@ function App() {
         uuid: 2,
         commentText: "commentText",
         commentPoster: "giga wojak",
-        repliedTo: "",
+        timeposted: Date(),
+        repliedTo: 1,
         reported: []
     },{
         uuid: 3,
         commentText: "friends",
         commentPoster: "apu",
+        timeposted: Date(),
         repliedTo: "",
         reported: []
     }]
@@ -64,6 +67,7 @@ function App() {
             uuid: uuidv4,
         commentText: commentText,
         commentPoster: user.username,
+        timeposted: Date(),
         repliedTo: "",
         reported: [],
         }
