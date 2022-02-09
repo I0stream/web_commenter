@@ -13,7 +13,7 @@ function App() {
         uuid: 1,
         commentText: "blah blah blah blah blah blah blah blah blah blah ",
         commentPoster: "giga chad",
-        timeposted: Date(),
+        timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         repliedTo: "",
         reported: [],
 
@@ -21,14 +21,14 @@ function App() {
         uuid: 2,
         commentText: "commentText",
         commentPoster: "giga wojak",
-        timeposted: Date(),
+        timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         repliedTo: 1,
         reported: []
     },{
         uuid: 3,
         commentText: "friends",
         commentPoster: "apu",
-        timeposted: Date(),
+        timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         repliedTo: "",
         reported: []
     }]
