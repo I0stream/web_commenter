@@ -1,6 +1,8 @@
 import React from 'react'
 import Comment from './Comment'
 import MessageField from './MessageField'
+import { CgMenu } from "react-icons/cg"
+
 
 const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
@@ -10,7 +12,12 @@ const MainTopicView = (props) => {
 		<div className='MainTopicView'>
 			<div className='head'>
 				<h3 className='current-topic'> {myTopic.topicName}</h3>
-				<div className='user-settings'>User/settings</div>
+				<div className='user-settings'>
+
+				<button><CgMenu 
+			    style={{ color: "darkcyan", fontSize: "20px", marginTop: "2px" }}
+			/></button>
+				</div>
 			</div>
 			<div className='topic-description'>{myTopic.description}</div>
 			<div>{console.log(myComments)}</div>
