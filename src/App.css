@@ -28,13 +28,11 @@ background: hotpink;
 
 /* main container */
 .MainTopicView {
-background: mediumpurple;
 display: flex;
 flex-direction: column;
 }
 .head{
   display: flex;
-  background: yellow;
   justify-content: space-between;
 }
 .current-topic {}
@@ -49,6 +47,8 @@ flex-direction: column;
 }
 
 .MessageField{
+  display:  flex;
+  flex: row;
   background: rebeccapurple;
 
 }

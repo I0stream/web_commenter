@@ -12,10 +12,11 @@ const Comment = (props) => {
 	                    <img src="#" alt="profile picture " width="30" className="user-img rounded-circle mr-2" /> 
 	                    <span>
 	                    	<small className="font-weight-bold text-primary">{commentPoster}</small>
+	                    	                    <small>{timePosted}</small>
 	                    	<small className="font-weight-bold"><p>{commentText}</p></small>
 	                    </span>
                     </div>
-                    <small>{timePosted}</small>
+
                 </div>
                 <div className="action d-flex justify-content-between mt-2 align-items-center">
                     <div className="reply px-4"> <small>Reply</small> </div>
