@@ -14,7 +14,7 @@ function App() {
         commentText: "blah blah blah blah blah blah blah blah blah blah ",
         commentPoster: "giga chad",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
-        repliedTo: "",
+        children: [],
         reported: [],
 
     },{
@@ -22,14 +22,22 @@ function App() {
         commentText: "commentText",
         commentPoster: "giga wojak",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
-        repliedTo: 1,
+        children: [],
         reported: []
     },{
         uuid: 3,
         commentText: "friends",
         commentPoster: "apu",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
-        repliedTo: "",
+        children: [
+            {
+            uuid: 4,
+            commentText: "reply",
+            commentPoster: "apu",
+            timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
+            children: [],
+            reported: []
+        }],
         reported: []
     }]
         )
@@ -47,7 +55,7 @@ function App() {
     const myTopic = {
         uuid: 1,
         topicName: "test topic" ,
-        description: "this is a test topic",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         commentUUIDs: ["1", "2"],
         poster: "chad",
         reported: [],

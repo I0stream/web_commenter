@@ -1,14 +1,19 @@
 import React from 'react'
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
+
 
 const Navbar = () => {
 
 	return (
-		<div className='Navbar'><ul className="nav-ul">
-			<li className="nav-item">Topic</li>
-			<li className="nav-item">PM</li>
-			<li className="nav-item">User</li>
-
-		</ul></div>
+		<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+			<Tab eventKey="home" title="Home">
+			</Tab>
+			<Tab eventKey="profile" title="Profile">
+			</Tab>
+			<Tab eventKey="contact" title="Messages" >
+			</Tab>
+		</Tabs>
 	)
 }
 

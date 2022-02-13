@@ -1,4 +1,9 @@
 /*https://bbbootstrap.com/snippets/bootstrap-comments-list-font-awesome-icons-and-toggle-button-91650380*/
+
+.children {
+    padding-left: 40px;
+}
+
 .card {
     border: none;
     box-shadow: 5px 6px 6px 2px #e9ecef;

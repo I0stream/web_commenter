@@ -8,6 +8,8 @@ const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
 	const myComments = props.userComments
 
+	
+
 	return (
 		<div className='MainTopicView'>
 			<div className='head'>
