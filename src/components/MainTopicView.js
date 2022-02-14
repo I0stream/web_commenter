@@ -8,7 +8,7 @@ const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
 	const myComments = props.userComments
 
-	
+
 
 	return (
 		<div className='MainTopicView'>
@@ -31,7 +31,7 @@ const MainTopicView = (props) => {
 			</div>
 			<div className='topic-description'>{myTopic.description}</div>
 			<div>{console.log(myComments)}</div>
-			<ul>
+			<ul className="comment-ul">
 
 			{myComments.map(comment => (
 	      		<Comment 

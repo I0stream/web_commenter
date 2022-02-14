@@ -41,6 +41,12 @@ flex-direction: column;
   text-indent: 50px;
 }
 
+.comment-ul{
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 
 .Topic-bar{
   background: deeppink;

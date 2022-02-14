@@ -16,6 +16,7 @@ function App() {
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         children: [],
         reported: [],
+        profilePic: "../public/test-profil-pics/p1.jpg"
 
     },{
         uuid: 2,
@@ -23,7 +24,9 @@ function App() {
         commentPoster: "giga wojak",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         children: [],
-        reported: []
+        reported: [],
+        profilePic: "../public/test-profil-pics/p1.jpg"
+
     },{
         uuid: 3,
         commentText: "friends",
@@ -36,9 +39,12 @@ function App() {
             commentPoster: "apu",
             timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
             children: [],
-            reported: []
+            reported: [],        
+            profilePic: "../public/test-profil-pics/p1.jpg"
         }],
-        reported: []
+        reported: [],
+        profilePic: "../public/test-profil-pics/p1.jpg"
+
     }]
         )
     
