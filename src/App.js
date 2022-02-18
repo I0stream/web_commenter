@@ -8,6 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 
 
 function App() {
+
+    //store pic in one place and only reference it with the comment/user obj
     const [comments, setComments] = useState(
     [{
         uuid: 1,
@@ -16,7 +18,7 @@ function App() {
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         children: [],
         reported: [],
-        profilePic: "../public/test-profil-pics/p1.jpg"
+        profilePic: "../public/test-profile-pics/p1.jpg"
 
     },{
         uuid: 2,
@@ -25,7 +27,7 @@ function App() {
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         children: [],
         reported: [],
-        profilePic: "../public/test-profil-pics/p1.jpg"
+        profilePic: "../public/test-profile-pics/p1.jpg"
 
     },{
         uuid: 3,
@@ -40,10 +42,10 @@ function App() {
             timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
             children: [],
             reported: [],        
-            profilePic: "../public/test-profil-pics/p1.jpg"
+            profilePic: "../public/test-profile-pics/p1.jpg"
         }],
         reported: [],
-        profilePic: "../public/test-profil-pics/p1.jpg"
+        profilePic: "../public/test-profile-pics/p1.jpg"
 
     }]
         )

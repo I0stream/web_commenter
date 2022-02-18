@@ -1,5 +1,6 @@
 import React from 'react'
 import '../comment.css'
+import "../test-profile-pics/p1.jpg"
 
 
 //https://coderrocketfuel.com/article/recursion-in-react-render-comments-with-nested-children
@@ -17,7 +18,7 @@ const Comment = (props) => {
 		<div className='Comment  card p-3'>
 			<div className="d-flex justify-content-between align-items-center">
                 <div className="user d-flex flex-row align-items-center">
-                    <img src={profilePic} alt="profile" width="30" className="user-img rounded-circle mr-2" /> 
+                    <img src={profilePic} id="profile" width="30" className="user-img rounded-circle mr-2" /> 
                     <span>
                     	<small className="font-weight-bold text-primary">{commentPoster}</small>
                     	                    <small>{timePosted}</small>
