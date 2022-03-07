@@ -38,6 +38,7 @@ flex-direction: column;
 .current-topic {}
 .user-settings {}
 .topic-description{
+  padding: 10px;
   text-indent: 50px;
 }
 
