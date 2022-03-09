@@ -7,9 +7,6 @@ const Topicbar = (props) => {
 
 	
 	const setPrimary = (e) => {
-		ListGroup.Item.active = false
-		e.active = true
-
 	}
 	
 
@@ -25,12 +22,12 @@ const Topicbar = (props) => {
 				/>
 				<button>New Topic +</button>
 			</div>
-			<ListGroup as="ul">
-			  <ListGroup.Item as="li" action onClick={setPrimary} variant="primary" role="tab" >{topicTitle}</ListGroup.Item>
-			  <ListGroup.Item as="li" action onClick={setPrimary}>Dapibus ac facilisis in</ListGroup.Item>
-			  <ListGroup.Item as="li" action>Morbi leo risus</ListGroup.Item>
-			  <ListGroup.Item as="li" action>Porta ac consectetur ac</ListGroup.Item>
-			  <ListGroup.Item as="li" action>Vestibulum at eros</ListGroup.Item>
+			<ListGroup>
+			  <ListGroup.Item action onClick={setPrimary} href="#link1">{topicTitle}</ListGroup.Item>
+			  <ListGroup.Item action onClick={setPrimary} href="#link1">Dapibus ac facilisis in</ListGroup.Item>
+			  <ListGroup.Item action href="#link1">Morbi leo risus</ListGroup.Item>
+			  <ListGroup.Item action href="#link1">Porta ac consectetur ac</ListGroup.Item>
+			  <ListGroup.Item action href="#link1">Vestibulum at eros</ListGroup.Item>
 			</ListGroup>
 		</div>
 	)
