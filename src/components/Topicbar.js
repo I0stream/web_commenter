@@ -5,6 +5,7 @@ const Topicbar = (props) => {
 	const myCurrentWebsite = props.websiteName
 	const topicTitle = props.testTopicName
 
+	
 	const setPrimary = (e) => {
 		ListGroup.Item.active = false
 		e.active = true
