@@ -9,6 +9,15 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
 
+        //get current website here and load topics and comments then populate
+        const currentWebsite = window.location.host
+
+        const websiteForum = {
+            uuid: "google.com",
+            topics: [],
+            mods: []
+        }
+    
     //store pic in one place and only reference it with the comment/user obj
     const [comments, setComments] = useState(
     [{
@@ -49,27 +58,55 @@ function App() {
 
     }]
         )
-    
-
-    //get current website here and load topics and comments then populate
-    const currentWebsite = window.location.host
-
-    const websiteForum = {
-        uuid: "google.com",
-        topics: [],
-        mods: []
-    }
-
-    const myTopic = {
+    const myTopics = [{
         uuid: 1,
-        topicName: "test topic" ,
+        topicName: "test 1" ,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         commentUUIDs: ["1", "2"],
         poster: "chad",
         reported: [],
 
-    }    
+    },{
+        uuid: 2,
+        topicName: "test 2" ,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        commentUUIDs: ["1", "2"],
+        poster: "chad",
+        reported: [],
 
+    },{
+        uuid: 3,
+        topicName: "test 3" ,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        commentUUIDs: ["1", "2"],
+        poster: "chad",
+        reported: [],
+
+    },{
+        uuid: 4,
+        topicName: "test 4" ,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        commentUUIDs: ["1", "2"],
+        poster: "chad",
+        reported: [],
+
+    },{
+        uuid: 5,
+        topicName: "test 5" ,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        commentUUIDs: ["1", "2"],
+        poster: "chad",
+        reported: [],
+
+    },{
+        uuid: 6,
+        topicName: "test 6" ,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        commentUUIDs: ["1", "2"],
+        poster: "chad",
+        reported: [],
+
+    },]    
 
     const user = {
         userUUID: "",
@@ -100,18 +137,23 @@ function App() {
         return savedComments || []
     }
 
+    const onSelectTopic = (uuid) =>{
+        //recieve uuid of selected topic
+        //update main topic view
+    }
+
   return (
     <div className="App">
         <div className="TopicAndNavBar">
             <Topicbar 
-                testTopicName={myTopic.topicName}
+                testTopics={myTopics}
                 websiteName={currentWebsite} 
                 propsSearchKeyword={searchKeyword}
             />
             <Navbar />
         </div>
         <MainTopicView 
-            posterTopic={myTopic} 
+            posterTopic={myTopics[0]} 
             userComments={comments} 
             addCommentProps={addComment}
         />

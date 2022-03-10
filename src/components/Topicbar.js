@@ -3,10 +3,12 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 const Topicbar = (props) => {
 	const myCurrentWebsite = props.websiteName
-	const topicTitle = props.testTopicName
+	const topics = props.testTopics
 
 	
-	const setPrimary = (e) => {
+	const setActive = (uuid) => {
+		console.log(uuid)
+		
 	}
 	
 
@@ -22,12 +24,15 @@ const Topicbar = (props) => {
 				/>
 				<button>New Topic +</button>
 			</div>
-			<ListGroup>
-			  <ListGroup.Item action onClick={setPrimary} href="#link1">{topicTitle}</ListGroup.Item>
-			  <ListGroup.Item action onClick={setPrimary} href="#link1">Dapibus ac facilisis in</ListGroup.Item>
-			  <ListGroup.Item action href="#link1">Morbi leo risus</ListGroup.Item>
-			  <ListGroup.Item action href="#link1">Porta ac consectetur ac</ListGroup.Item>
-			  <ListGroup.Item action href="#link1">Vestibulum at eros</ListGroup.Item>
+			<ListGroup as="ul" id="list-group-tabs">
+				{topics.map(topic => (
+					<ListGroup.Item 
+					key={topic.uuid} 
+					action 
+					onClick={() => setActive(topic.uuid)}//anonymous func call
+					>
+						{topic.topicName}</ListGroup.Item>
+				))}
 			</ListGroup>
 		</div>
 	)
