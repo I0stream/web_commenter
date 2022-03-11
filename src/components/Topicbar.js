@@ -5,14 +5,6 @@ const Topicbar = (props) => {
 	const myCurrentWebsite = props.websiteName
 	const topics = props.testTopics
 
-	
-	const setActive = (uuid) => {
-		console.log(uuid)
-		
-	}
-	
-
-
 	return (
 		<div className='Topic-bar'>
 			<h2>{myCurrentWebsite}</h2>
@@ -29,7 +21,7 @@ const Topicbar = (props) => {
 					<ListGroup.Item 
 					key={topic.uuid} 
 					action 
-					onClick={() => setActive(topic.uuid)}//anonymous func call
+					onClick={() => props.onSelectTopic(topic.uuid)}
 					>
 						{topic.topicName}</ListGroup.Item>
 				))}

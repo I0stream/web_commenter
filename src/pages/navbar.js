@@ -1,19 +1,17 @@
 import React from 'react'
-import Tabs from 'react-bootstrap/Tabs'
-import Tab from 'react-bootstrap/Tab'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
+import {AiOutlineHome, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
 
 
 const Navbar = () => {
 
 	return (
-		<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-			<Tab eventKey="home" title="Home">
-			</Tab>
-			<Tab eventKey="profile" title="Profile">
-			</Tab>
-			<Tab eventKey="contact" title="Messages" >
-			</Tab>
-		</Tabs>
+		<ButtonGroup aria-label="Basic example">
+			<Button variant="secondary"><AiOutlineHome /></Button>
+			<Button variant="secondary"><AiOutlineMail /></Button>
+			<Button variant="secondary"><AiOutlineUser /></Button>
+		</ButtonGroup>
 	)
 }
 
