@@ -17,7 +17,14 @@ function App() {
     const [topics, setTopics] = useState(getInitialTopics())
     const [selection, setSelection] = useState(getInitialSelection())
     const [comments, setComments] = useState(getInitialComments())
-
+    
+    function setall(){
+        //setTopics(...topics, newTopic)
+        setTopics(initalData.myTopics)
+        setSelection(initalData.myTopics[0])
+        setComments(initalData.comms)
+    }
+    
     
     const user = {
         userUUID: "",
