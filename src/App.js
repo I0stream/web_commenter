@@ -11,18 +11,19 @@ function App() {
     let data = new initalData()
 
     //set a bunch of chit, there will be a lot of blank websites so probably set some instructions in them
-
+    
     //get current website here and load topics and comments then populate
     const currentWebsite = window.location.host
-    const [topics, setTopics] = useState(getInitialTopics())
-    const [selection, setSelection] = useState(getInitialSelection())
-    const [comments, setComments] = useState(getInitialComments())
+    const [topics, setTopics] = useState(data.myTopics)
+    const [selection, setSelection] = useState(data.myTopics[0])
+    const [comments, setComments] = useState(data.comms)
     
+
     function setall(){
         //setTopics(...topics, newTopic)
-        setTopics(initalData.myTopics)
-        setSelection(initalData.myTopics[0])
-        setComments(initalData.comms)
+        setTopics(data.myTopics)
+        setSelection(data.myTopics[0])
+        setComments(data.comms)
     }
     
     
@@ -56,7 +57,7 @@ function App() {
 
     function getInitialSelection() {
         // getting stored items
-        const temp = localStorage.getItem("topics")
+        const temp = localStorage.getItem("selection")
         let savedSelection = JSON.parse(temp)
 
         if (savedSelection){
@@ -105,7 +106,6 @@ function App() {
                 onSelectTopic={onSelectTopic}
 
             />
-            <Navbar className="navbar"/>
         </div>
         <MainTopicView 
             posterTopic={selection} 
@@ -119,11 +119,6 @@ function App() {
 export default App;
 
 class initalData{
-
-    constructor(comms, myTopics){
-        this.comms = comms
-        this.myTopics = myTopics
-    }
 
     comms = [{
         uuid: 1,
@@ -165,7 +160,7 @@ class initalData{
         myTopics = [{
             uuid: 1,
             topicName: "test 1" ,
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
             commentUUIDs: ["2"],
             poster: "chad",
             reported: [],

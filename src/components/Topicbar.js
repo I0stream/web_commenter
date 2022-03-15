@@ -7,7 +7,7 @@ const Topicbar = (props) => {
 
 	return (
 		<div className='Topic-bar'>
-			<h2>{myCurrentWebsite}</h2>
+			<h2 className='website_name'>{myCurrentWebsite}</h2>
 			<div style={{display:'flex'}}>
 				<input 
 					type="text"

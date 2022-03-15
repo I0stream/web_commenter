@@ -21,6 +21,11 @@
 
 
 .Topic-bar {
+  width: 125px;
+}
+.website_name {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* main container */
@@ -32,11 +37,17 @@ flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
-.current-topic {}
 .user-settings {}
+
+.current-topic {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+}
 .topic-description{
   padding: 10px;
   text-indent: 50px;
+  max-width: 500px;
 }
 
 .comment-ul{
