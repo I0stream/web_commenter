@@ -6,7 +6,6 @@ import MessageField from './MessageField'
 const MainTopicView = (props) => {
 	const myTopic = props.posterTopic
 	const myComments = props.userComments
-	const selection = props.selection
 
 	return (
 		<div className='MainTopicView'>
@@ -14,8 +13,8 @@ const MainTopicView = (props) => {
 				<h2 className='current-topic'> {myTopic.topicName}</h2>
 
 				<div className='topic-description'>{myTopic.description}</div>
-				</div>
-			<div>{console.log(myComments)}</div>
+			</div>
+			
 			<ul className="comment-ul">
 
 			{myComments.map(comment => (

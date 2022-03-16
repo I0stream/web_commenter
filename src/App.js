@@ -72,11 +72,17 @@ function App() {
         var sTopic  = topics.filter(
             function(topic) { return topic.uuid === uuid}
         )
-        setSelection(prevState =>
-			prevState.map(topic => {
-				return sTopic
-			})
-		)
+        setSelection(sTopic[0])
+        commentUpdateOnSelect(sTopic[0])
+    }
+
+    ///not working rn //////////////////////////////////////////////////////
+    const commentUpdateOnSelect = (topicUUid) => {
+        var topicComments = comments.filter(
+            function(comment) {return comment.topicuuid === topicUUid}
+        )
+        console.log(topicComments)
+        setComments(topicComments)
     }
 
     const searchKeyword = (keyword) => {
@@ -122,6 +128,7 @@ class initalData{
 
     comms = [{
         uuid: 1,
+        topicuuid: 1,
         commentText: "blah blah blah blah blah blah blah blah blah blah ",
         commentPoster: "giga chad",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
@@ -131,6 +138,7 @@ class initalData{
     
     },{
         uuid: 2,
+        topicuuid: 2,
         commentText: "commentText",
         commentPoster: "giga wojak",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
@@ -140,12 +148,14 @@ class initalData{
     
     },{
         uuid: 3,
+        topicuuid: 3,
         commentText: "friends",
         commentPoster: "apu",
         timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
         children: [
             {
             uuid: 4,
+            topicuuid: 3,
             commentText: "reply",
             commentPoster: "apu",
             timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
