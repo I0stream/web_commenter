@@ -30,7 +30,7 @@ const MessageField = (props) => {
 	}
 
 	return (
-			<form onSubmit={handleSubmit} className='MessageField'>
+		<form onSubmit={handleSubmit} className='MessageField'>
 			<input 
 				className="mF"
 				type="text"

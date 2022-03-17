@@ -17,6 +17,9 @@ function App() {
     const [topics, setTopics] = useState(data.myTopics)
     const [selection, setSelection] = useState(data.myTopics[0])
     const [comments, setComments] = useState(data.comms)
+    const [topicComments, setTopicComments] = useState(comments.filter(
+        function(comment) {return comment.topicuuid === data.myTopics[0].uuid}
+    ))
     
 
     function setall(){
@@ -73,16 +76,16 @@ function App() {
             function(topic) { return topic.uuid === uuid}
         )
         setSelection(sTopic[0])
-        commentUpdateOnSelect(sTopic[0])
+        commentUpdateOnSelect(sTopic[0].uuid)
     }
 
     ///not working rn //////////////////////////////////////////////////////
-    const commentUpdateOnSelect = (topicUUid) => {
-        var topicComments = comments.filter(
-            function(comment) {return comment.topicuuid === topicUUid}
+    const commentUpdateOnSelect = (stopicUUid) => {
+        console.log(stopicUUid)
+        var stopicComments = comments.filter(
+            function(comment) {return comment.topicuuid === stopicUUid}
         )
-        console.log(topicComments)
-        setComments(topicComments)
+        setTopicComments(stopicComments)
     }
 
     const searchKeyword = (keyword) => {
@@ -115,7 +118,7 @@ function App() {
         </div>
         <MainTopicView 
             posterTopic={selection} 
-            userComments={comments} 
+            userComments={topicComments} 
             addCommentProps={addComment}
         />
     </div>
@@ -156,7 +159,7 @@ class initalData{
             {
             uuid: 4,
             topicuuid: 3,
-            commentText: "reply",
+            commentText: "replykjlnjknkn",
             commentPoster: "apu",
             timePosted: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),
             children: [],
@@ -171,7 +174,6 @@ class initalData{
             uuid: 1,
             topicName: "test 1" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-            commentUUIDs: ["2"],
             poster: "chad",
             reported: [],
     
@@ -179,7 +181,6 @@ class initalData{
             uuid: 2,
             topicName: "test 2" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            commentUUIDs: ["1"],
             poster: "chad",
             reported: [],
     
@@ -187,7 +188,6 @@ class initalData{
             uuid: 3,
             topicName: "test 3" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            commentUUIDs: ["1", "2", "3"],
             poster: "chad",
             reported: [],
     
@@ -195,7 +195,6 @@ class initalData{
             uuid: 4,
             topicName: "test 4" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            commentUUIDs: ["1", "2"],
             poster: "chad",
             reported: [],
     
@@ -203,7 +202,6 @@ class initalData{
             uuid: 5,
             topicName: "test 5" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            commentUUIDs: ["1", "2"],
             poster: "chad",
             reported: [],
     
@@ -211,7 +209,6 @@ class initalData{
             uuid: 6,
             topicName: "test 6" ,
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            commentUUIDs: ["1", "2"],
             poster: "chad",
             reported: [],
     

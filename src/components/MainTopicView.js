@@ -24,6 +24,7 @@ const MainTopicView = (props) => {
 	      		/>
 	    		))}
 			</ul>
+			
 			<MessageField addCommentProps={props.addCommentProps}/>
 		</div>
 	)
