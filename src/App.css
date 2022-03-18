@@ -9,7 +9,8 @@
 }
 
 /* main nav bar */
-.navbar {
+.navBottombar {
+  display: flex;
 }
 .nav-ul{
   display: inline;
@@ -46,7 +47,7 @@ flex-direction: column;
 .topic-description{
   padding: 10px;
   text-indent: 50px;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .comment-ul{

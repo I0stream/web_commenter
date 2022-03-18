@@ -18,10 +18,9 @@ const Comment = (props) => {
 		<div className='Comment  card p-3'>
 			<div className="d-flex justify-content-between align-items-center">
                 <div className="user d-flex flex-row align-items-center">
-                    <img src={profilePic} id="profile" width="30" className="user-img rounded-circle mr-2" /> 
                     <span>
                     	<small className="font-weight-bold text-primary">{commentPoster}</small>
-                    	                    <small>{timePosted}</small>
+                    	                    <small> {timePosted}</small>
                     	<small className="font-weight-bold"><p>{commentText}</p></small>
                     </span>
                 </div>

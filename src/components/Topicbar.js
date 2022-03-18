@@ -9,11 +9,6 @@ const Topicbar = (props) => {
 		<div className='Topic-bar'>
 			<h2 className='website_name'>{myCurrentWebsite}</h2>
 			<div style={{display:'flex'}}>
-				<input 
-					type="text"
-					value="Search"
-					onChange={e => this.props.propsSearchKeyword(e.target.value)}
-				/>
 				<button>New Topic +</button>
 			</div>
 			<ListGroup as="ul" id="list-group-tabs">

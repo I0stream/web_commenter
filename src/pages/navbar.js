@@ -4,13 +4,19 @@ import Button from 'react-bootstrap/Button'
 import {AiOutlineHome, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
 	return (
 		<ButtonGroup aria-label="Basic example">
-			<Button variant="secondary"><AiOutlineHome /></Button>
-			<Button variant="secondary"><AiOutlineMail /></Button>
-			<Button variant="secondary"><AiOutlineUser /></Button>
+			<Button variant="secondary"
+				onClick={props.navigate("topics")}
+				><AiOutlineHome /></Button>
+			<Button variant="secondary"
+				onClick={props.navigate("chat")}
+				><AiOutlineMail /></Button>
+			<Button variant="secondary"
+				onClick={props.navigate("mail")}
+			><AiOutlineUser /></Button>
 		</ButtonGroup>
 	)
 }

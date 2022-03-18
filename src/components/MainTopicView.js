@@ -1,6 +1,5 @@
 import React from 'react'
 import Comment from './Comment'
-import MessageField from './MessageField'
 
 
 const MainTopicView = (props) => {
@@ -13,6 +12,8 @@ const MainTopicView = (props) => {
 				<h2 className='current-topic'> {myTopic.topicName}</h2>
 
 				<div className='topic-description'>{myTopic.description}</div>
+				<div className="reply px-4"> <small>Reply to post</small> </div>
+
 			</div>
 			
 			<ul className="comment-ul">
@@ -25,7 +26,6 @@ const MainTopicView = (props) => {
 	    		))}
 			</ul>
 			
-			<MessageField addCommentProps={props.addCommentProps}/>
 		</div>
 	)
 }

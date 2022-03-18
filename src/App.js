@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
 
+import MessageField from './components/MessageField'
 import Navbar from './pages/navbar'
 import MainTopicView from './components/MainTopicView'
 import Topicbar from './components/Topicbar'
@@ -103,8 +104,19 @@ function App() {
         }
         setComments([...comments, newComment])
     }
+    const onSelectAddcomment = () =>{
+        console.log(" comment add modal")
+    }
+    const addTopic = (topicTitle, topicDescription) => {
+        console.log("add topic")
+    }
 
-
+    const navigate = myNavlink =>{
+        console.log("nav to: ", myNavlink)
+    }
+    const onSelectAddTopic = () =>{
+        console.log(" topic modal")
+    }
   return (
     <div className="App">
         <div className="TopicAndNavBar">
@@ -113,14 +125,24 @@ function App() {
                 websiteName={currentWebsite} 
                 propsSearchKeyword={searchKeyword}
                 onSelectTopic={onSelectTopic}
+                onSelectAddTopic={onSelectAddTopic}
 
             />
+            <Navbar
+            className="navBottombar" 
+            navigate={navigate}
+            />
         </div>
+        
         <MainTopicView 
             posterTopic={selection} 
             userComments={topicComments} 
-            addCommentProps={addComment}
         />
+        <MessageField 
+            addCommentProps={addComment}
+            addtopicProps={addTopic}/>
+
+        
     </div>
   );
 }
